@@ -1,6 +1,5 @@
-
 resource "aws_sfn_state_machine" "main-workflow" {
-  name     = "${var.environment_prefix}-main-workflow"
+  name     = "${var.environment_prefix}-main-workflow1"
   role_arn = "${var.lambda_role_arn}"
   definition = <<EOF
 
