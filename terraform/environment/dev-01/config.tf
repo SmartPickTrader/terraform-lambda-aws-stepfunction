@@ -1,15 +1,15 @@
+// Main configuration
+variable "region"               {default = "us-east-1"}
+variable "jar_file"             {default = "demo-aws-stepfunction-1.0.0-SNAPSHOT.jar"}
+variable "environment_prefix"   {default = "dev-01"}
+
 provider "aws" {
   region = "${var.region}"
   profile = "dev-01"
 }
 
-// Main configuration
-variable "region"               {default = "us-east-2"}
-variable "jar_file"             {default = "demo-aws-stepfunction-1.0.0-SNAPSHOT.jar"}
-variable "environment_prefix"   {default = "dev-01"}
-
 // AWS pre-existing resources
-variable "lambda_role_arn"      {default = "arn:aws:iam::473543219091:role/lambda-role"}
+variable "lambda_role_arn"      {default = "arn:aws:iam::233489832487:role/accessall"}
 
 module "core" {
   source                    = "../../module/core"

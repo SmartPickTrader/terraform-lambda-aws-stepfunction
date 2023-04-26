@@ -7,7 +7,8 @@ resource "aws_lambda_function" "demo-validate" {
   runtime       = "java8"
   role          = "${var.lambda_role_arn}"
   filename          = "../../../target/${var.jar_file}"
-  source_code_hash = "${base64sha256(file("../../../target/${var.jar_file}"))}"
+  source_code_hash = base64sha256(filebase64("${path.module}/../../../target/${var.jar_file}"))
+
   memory_size   = 512
   timeout       = 300
   environment {
@@ -23,7 +24,8 @@ resource "aws_lambda_function" "demo-process" {
   runtime       = "java8"
   role          = "${var.lambda_role_arn}"
   filename          = "../../../target/${var.jar_file}"
-  source_code_hash = "${base64sha256(file("../../../target/${var.jar_file}"))}"
+  source_code_hash = base64sha256(filebase64("${path.module}/../../../target/${var.jar_file}"))
+
   memory_size   = 512
   timeout       = 300
   environment {
@@ -39,7 +41,8 @@ resource "aws_lambda_function" "demo-exception" {
   runtime       = "java8"
   role          = "${var.lambda_role_arn}"
   filename          = "../../../target/${var.jar_file}"
-  source_code_hash = "${base64sha256(file("../../../target/${var.jar_file}"))}"
+  source_code_hash = base64sha256(filebase64("${path.module}/../../../target/${var.jar_file}"))
+
   memory_size   = 512
   timeout       = 300
   environment {
