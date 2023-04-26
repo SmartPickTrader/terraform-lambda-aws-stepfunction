@@ -9,7 +9,7 @@ provider "aws" {
 }
 
 // AWS pre-existing resources
-variable "lambda_role_arn"      {default = "arn:aws:iam::230188408900:role/NewRole"}
+variable "lambda_role_arn"      {default = "arn:aws:iam::230188408900:role/NewRole_new"}
 
 module "core" {
   source                    = "../../module/core"
